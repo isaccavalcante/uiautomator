@@ -458,7 +458,7 @@ class AutomatorServer(object):
                 pass
         return self.__sdk
 
-    def start(self, timeout=5):
+    def start(self, timeout=15):
         if self.sdk_version() < 18:
             files = self.push()
             cmd = list(itertools.chain(
@@ -1224,7 +1224,7 @@ class AutomatorDeviceObject(AutomatorDeviceUiObject):
         d().fling.horiz.toEnd()
         '''
         @param_to_property(
-            dimention=["vert", "vertically", "vertical", "horiz", "horizental", "horizentally"],
+            dimention=["vert", "vertically", "vertical", "horiz", "horizontal", "horizontally"],
             action=["forward", "backward", "toBeginning", "toEnd"]
         )
         def _fling(dimention="vert", action="forward", max_swipes=1000):
